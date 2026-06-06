@@ -28,3 +28,64 @@ loop do
     puts "Invalid option. Please try again."
   end
 end
+=begin
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 1
+→ Add book - coming soon!
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 2
+→ List books - coming soon!
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 3
+→ Search for a book - coming soon!
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 4
+→ Update a book - coming soon!
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 5
+→ Delete a book - coming soon!
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 6
+Good bye
+=end
