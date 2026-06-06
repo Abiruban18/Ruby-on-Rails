@@ -1,4 +1,3 @@
-
 def show_spanish_menu
   puts "\n=== Sistema de Gestión de Biblioteca ==="
   puts "1. Agregar un libro"
@@ -45,3 +44,73 @@ loop do
     puts "Invalid option. Please try again."
   end
 end
+=begin  
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 0
+
+=== Sistema de Gestión de Biblioteca ===
+1. Agregar un libro
+2. Listar libros
+3. Buscar un libro
+4. Actualizar un libro
+5. Eliminar un libro
+6. Salir
+----------------------------------------
+Presione Enter para regresar al menú principal...1
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 2
+→ List books - coming soon!
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 3
+→ Search for a book - coming soon!
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 4
+→ Update a book - coming soon!
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 5
+→ Delete a book - coming soon!
+
+=== Library Management System ===
+1. Add a book
+2. List books
+3. Search for a book
+4. Update a book
+5. Delete a book
+6. Exit
+Enter your choice: 6
+Good bye
+=end
