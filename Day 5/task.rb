@@ -96,4 +96,105 @@ def delete_book(books)
   print "Enter book title to delete: "
   target_title = gets.chomp
 
-  if books.reject! { |b|
+  if books.reject! { |b| b[:title].downcase == target_title.downcase }
+    puts "Book successfully deleted."
+  else
+    puts "Book not found."
+  end
+end
+
+def update_book(books)
+  puts "\n--- Updating a Book Title ---"
+  print "Enter current book title: "
+  target_title = gets.chomp
+  
+  book = books.find { |b| b[:title].downcase == target_title.downcase }
+
+  if book
+    print "Enter new title: "
+    new_title = gets.chomp
+    
+    return unless validate_input(new_title, "Title")
+    cleaned_title = new_title.strip
+
+    print "Rename '#{book[:title]}' → '#{cleaned_title}'? (y/n): "
+    confirmation = gets.chomp.downcase
+
+    if confirmation == 'y'
+      book[:title] = cleaned_title
+      puts "Book title updated successfully!"
+    else
+      puts "Update cancelled."
+    end
+  else
+    puts "No book found with that title."
+  end
+end
+
+def show_dev_stats(books)
+  puts "\n--- Developer Stats ---"
+  if books.empty?
+    puts "Library is empty. No stats available."
+    return
+  end
+
+  total = books.count
+  recent_books = books.count { |b| b[:year] > 2000 }
+  authors = books.map { |b| b[:author] }.uniq
+
+  puts "Total Books: #{total}"
+  puts "Books published after 2000: #{recent_books}"
+  puts "Unique Authors: #{authors.join(', ')}"
+end
+
+def books_between_years(books)
+  puts "\n--- Books Between Years ---"
+  print "Enter start year: "
+  start_input = gets.chomp
+  return unless validate_input(start_input, "Start year")
+  
+  print "Enter end year: "
+  end_input = gets.chomp
+  return unless validate_input(end_input, "End year")
+
+  start_year = start_input.to_i
+  end_year = end_input.to_i
+
+  if end_year < start_year
+    puts "Invalid range."
+    return
+  end
+
+  filtered_books = books.select { |b| b[:year] >= start_year && b[:year] <= end_year }
+
+  if filtered_books.empty?
+    puts "No books found in this year range."
+    return
+  end
+
+  sorted_books = filtered_books.sort_by { |b| b[:year] }
+
+  puts "\nBooks found:"
+  sorted_books.each do |book|
+    display_book(book)
+  end
+end
+
+loop do
+  show_menu
+  choice = gets.chomp
+
+  case choice
+  when "1" then add_book(books)
+  when "2" then list_books(books)
+  when "3" then search_book(books)
+  when "4" then delete_book(books)
+  when "5" then update_book(books)
+  when "6" then puts "Goodbye!"; break
+  when "7" then list_all_books(books)
+  when "8" then show_dev_stats(books)
+  when "9" then books_between_years(books)
+  else
+    puts "Invalid option. Please try again."
+  end
+end
